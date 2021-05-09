@@ -79,11 +79,11 @@ jobs:
         cd openwrt
         OpVersion1=$(echo "$(cat package/lean/default-settings/files/zzz-default-settings)" | grep -Po "DISTRIB_REVISION=\'\K[^\']*")
         echo $OpVersion1
-        OpVersion2=$(date "+%Y.%m.%d"\ \compiled\ \by\ \jcnf)
+        OpVersion2=$(date "+%Y.%m.%d"\ \compiled\ \by\ \jcnf<a href=\"https://t.me/mffjc\">)
         echo $OpVersion2
         sed -i "s/DISTRIB_REVISION=.*/DISTRIB_REVISION=\'$OpVersion1\ $OpVersion2\'\"\ \>>\ \/\etc\/\openwrt_release/" package/lean/default-settings/files/zzz-default-settings
         echo "$(cat package/lean/default-settings/files/zzz-default-settings)" | grep -Po "DISTRIB_REVISION=\'\K[^\']*"
-        sed -i "/CPU usage/a\                \<tr><td\ \width=\"33%\"\> 使用帮助\ <\/td><td>jcnf编译：<a href=\"https://t.me/mffjc\">\ TG频道 \</a> 和 <a href=\"https://ybfl.xyz\">\ 博客 \</a></td></tr>" package/lean/autocore/files/arm/index.htm
+        #sed -i "/CPU usage/a\                \<tr><td\ \width=\"33%\"\> 使用帮助\ <\/td><td>jcnf编译：<a href=\"https://t.me/mffjc\">\ TG频道 \</a> 和 <a href=\"https://ybfl.xyz\">\ 博客 \</a></td></tr>" package/lean/autocore/files/arm/index.htm
     
     - name: Load custom configuration
       run: |
