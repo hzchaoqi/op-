@@ -67,9 +67,10 @@ jobs:
         chmod +x $DIY_P1_SH
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P1_SH
+    - name: upss
+      run: cd openwrt && svn co https://github.com/fw876/helloworld/trunk/shadowsocksr-libev package/shadowsocksr-libev
 
     - name: Update feeds
-      run: cd openwrt && svn co https://github.com/fw876/helloworld/trunk/shadowsocksr-libev package/shadowsocksr-libev
       run: cd openwrt && ./scripts/feeds update -a
 
     - name: Install feeds
