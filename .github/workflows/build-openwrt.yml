@@ -69,6 +69,7 @@ jobs:
         $GITHUB_WORKSPACE/$DIY_P1_SH
 
     - name: Update feeds
+      run: cd openwrt && svn co https://github.com/fw876/helloworld/trunk/shadowsocksr-libev package/shadowsocksr-libev
       run: cd openwrt && ./scripts/feeds update -a
 
     - name: Install feeds
